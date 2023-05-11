@@ -15,13 +15,22 @@ const db = firebase.firestore();
 
 var rankingRef = db.collection("ranking");
 
+const rankingList = document.getElementById("rankingList");
+
+rankingRef.orderBy("score", "desc").onSnapshot((querySnapshot) => {
+  rankingList.innerHTML = "";
+  querySnapshot.forEach((doc) => {
+    rankingList.innerHTML += `<li>${doc.id}: ${doc.data().score}</li>`;
+  });
+});
+
 const appendRanking = () => {
   const name = document.getElementById("name");
   const score = document.getElementById("score");
 
   rankingRef.doc(name.value).set({
     // name: name.value,
-    score: score.value,
+    score: parseInt(score.value),
   });
 
   name.value = "";
