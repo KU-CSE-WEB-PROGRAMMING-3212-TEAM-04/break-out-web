@@ -229,6 +229,7 @@ video {
   height: 95vh;
   text-align: center;
   font-family: sans-serif;
+  padding-top: 200px;
   
 }
 #mode_select .mode {
