@@ -187,7 +187,7 @@ $(document).ready(function () {
 
     // variables about the brick
     const brickRowCount = 4; // number of rows of bricks
-    const brickColumnCount = 7; // number of rows of bricks
+    const brickColumnCount = 6; // number of rows of bricks
     var rowGeneratingInterval = 5000;
     let maximumBrickRow = 9;
     const brickWidth = 60;
@@ -326,8 +326,8 @@ $(document).ready(function () {
       paddleY = canvas.height - paddleHeight - 30;
       ballX = canvas.width / 2;
       ballY = paddleY - ballRadius;
-      ballDX = 4;
-      ballDY = -5;
+      ballDX = 2;
+      ballDY = -3;
     }
 
     // Game over and reset function
