@@ -1,8 +1,8 @@
 //인트로
-var inputs1;
-var inputs2;
-var totalDuration1;
-var totalDuration2;
+var introDuration1;
+var introLabel2;
+var introDuration1;
+var introDuration2;
 var totalDuration;
 
 //시작화면
@@ -13,21 +13,21 @@ var bgm1 = new Audio('source/startbgm1.mp3');
 var bgm2 = new Audio('source/startbgm2.mp3');
 
 //선택화면
-var mode;
-var team;
-var level;
+var gameType;
+var teamType;
+var difficulty;
 
 
 $(document).ready(function () {
     //인트로
-    inputs1 = $("#pc1").find($("label"));
-    inputs2 = $("#pc2").find($("label"));
-    totalDuration1 = animateLabels(inputs1, 0);
-    totalDuration2 = animateLabels(inputs2, totalDuration1);
-    totalDuration = totalDuration1 + totalDuration2 - 2000;
+    introDuration1 = $("#gameIntro1").find($("label"));
+    introLabel2 = $("#gameIntro2").find($("label"));
+    introDuration1 = animateLabels(introDuration1, 0);
+    introDuration2 = animateLabels(introLabel2, introDuration1);
+    totalDuration = introDuration1 + introDuration2 - 2000;
     setTimeout(function () {
-        $('#progress').fadeOut();
-        $('#start').fadeIn();
+        $('#gameIntroScreen').fadeOut();
+        $('#homeScreen').fadeIn();
         bgm1.play();
         bgm1.loop = true;
     }, totalDuration);
@@ -40,7 +40,7 @@ $(document).ready(function () {
             $(inputs[i]).css("-animation", "anim 3s " + (initialDelay + time) + "ms ease-in-out");
         }
         setTimeout(function () {
-            $("#sound_progress")[0].play();
+            $("#introAudio")[0].play();
         }, (initialDelay + time));
 
         return totalDuration;
@@ -48,8 +48,8 @@ $(document).ready(function () {
 
 
     //시작화면
-    $("#settingbtn").click(function () {
-        $("#popup").fadeIn();
+    $("#settingsButton").click(function () {
+        $("#settingsScreen").fadeIn();
         updateColor();
         $("#Red").change(function (e) {
             red_value = $(this).val();
@@ -64,7 +64,7 @@ $(document).ready(function () {
             updateColor();
         });
 
-        $("#exit").click(function () {
+        $("#exitSettings").click(function () {
             if ($('input[name="rad"]:checked').val() == "b1") {
                 bgm2.pause();
                 bgm1.play();
@@ -79,42 +79,42 @@ $(document).ready(function () {
                 bgm1.pause();
                 bgm2.pause();
             }
-            $("#popup").fadeOut();
+            $("#settingsScreen").fadeOut();
         });
         function updateColor() {
             ballColor = 'rgb(' + red_value + ',' + green_value + ',' + blue_value + ')';
             $("#setting_color").css('background-color', ballColor);
         };
     });
-    $("#startbtn").click(function () {
-        $("#start").hide();
-        $("#select").fadeIn();
-        // $("#select").css('display','gird');
+    $("#startGameButton").click(function () {
+        $("#homeScreen").hide();
+        $("#gameSelectingScreen").fadeIn();
+        // $("#gameSelectingScreen").css('display','gird');
     });
 
 
     //선택화면
-    mode = -1; team = -1; level = -1;
-    $('.mode').click(function () {
-        mode = $(this).index();
-        $('#mode_select').hide();
-        $('#team_select').fadeIn();
+    gameType = -1; teamType = -1; difficulty = -1;
+    $('.gameType').click(function () {
+        gameType = $(this).index();
+        $('#gameTypeSelectingScreen').hide();
+        $('#teamSelectingScreen').fadeIn();
         play();
     });
 
-    $('.team').click(function () {
-        team = $(this).index();
-        if (mode == 0) {
-            $('#team_select').hide();
-            $('#level_select').fadeIn();
+    $('.teamType').click(function () {
+        teamType = $(this).index();
+        if (gameType == 0) {
+            $('#teamSelectingScreen').hide();
+            $('#difficultyChoosingScreen').fadeIn();
         }
         else {
             //게임시작
         }
         play();
     });
-    $('.level').click(function () {
-        level = $(this).index();
+    $('.difficulty').click(function () {
+        difficulty = $(this).index();
         play();
     });
 

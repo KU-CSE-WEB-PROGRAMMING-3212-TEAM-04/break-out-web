@@ -8,11 +8,11 @@
         <script src="main.js"></script>
     </head>
     <body>
-        <audio id="sound_progress" src="source/효과음1.mp3"></audio>
+        <audio id="introAudio" src="source/효과음1.mp3"></audio>
         <!-- <audio id="bgm_start" src="source/startbgm1.mp3"></audio> -->
     
-        <div class="progress">
-            <div class="progress-container" id="pc1">
+        <div class="gameIntroScreen">
+            <div class="gameIntroContainer" id="gameIntro1">
                 <label> W </label>
                 <label> E </label>
                 <label> B </label>
@@ -28,7 +28,7 @@
                 <label> N </label>
                 <label> G </label>
             </div>
-            <div class="progress-container" id="pc2">
+            <div class="gameIntroContainer" id="gameIntro2">
                 <label> T </label>
                 <label> E </label>
                 <label> A </label>
@@ -37,18 +37,19 @@
               </div>    
         </div>
         
-        <div id="start">
+        <div id="homeScreen">
             <video muted autoplay loop>
                 <source src="source/startmedia1.mp4" type="video/mp4">
             </video>
             <img src="source/title4.png" id="title">
-            <!-- 설정버튼 -->
-            <img src="source/setting.png" id="settingbtn">
+            <!-- Settings button -->
+            <img src="source/setting.png" id="settingsButton">
             <!-- <input type="button" class="setting-button" id="contents"/> -->
-            <!-- 시작버튼 -->
-            <img src="source/startbtn.png" id="startbtn">
+            <!-- Start button -->
+            <img src="source/startbtn.png" id="startGameButton">
         </div>
-        <div id="popup">
+
+        <div id="settingsScreen">
             <div id="popmenu">
                 <div id="setting-main-text">Setting</div>
                 <div id="music-onoff">
@@ -81,24 +82,25 @@
                         <input type="range" id="Blue" value="0" min="0" max="255">
                     </div>
                 </div>
-                <div id="exit">save</div>
+                <div id="exitSettings">save</div>
             </div>
         </div>
-        <div id="select">
-            <div id="mode_select">
-                <div class="mode"><img src="source/mode1.jpg" class="m_img" alt="m_img"></div>
-                <div class="mode"><img src="source/mode2.jpg" class="m_img" alt="m_img"></div>
+
+        <div id="gameSelectingScreen">
+            <div id="gameTypeSelectingScreen">
+                <div class="gameType"><img src="source/mode1.jpg" class="m_img" alt="m_img"></div>
+                <div class="gameType"><img src="source/mode2.jpg" class="m_img" alt="m_img"></div>
             </div>
-            <div id="team_select">
-                <div class="team"><img src="source/team1.jpg" class="t_img" alt="t_img"></div>
-                <div class="team"><img src="source/team2.jpg" class="t_img" alt="t_img"></div>
-                <div class="team"><img src="source/team3.jpg" class="t_img" alt="t_img"></div>
-                <div class="team"><img src="source/team4.jpg" class="t_img" alt="t_img"></div>
+            <div id="teamSelectingScreen">
+                <div class="teamType"><img src="source/team1.jpg" class="t_img" alt="t_img"></div>
+                <div class="teamType"><img src="source/team2.jpg" class="t_img" alt="t_img"></div>
+                <div class="teamType"><img src="source/team3.jpg" class="t_img" alt="t_img"></div>
+                <div class="teamType"><img src="source/team4.jpg" class="t_img" alt="t_img"></div>
             </div>
-            <div id="level_select">
-                <div class="level"><img src="source/level1.png" class="l_img" alt="c_img"></div>
-                <div class="level"><img src="source/level2.jpg" class="l_img" alt="c_img"></div>
-                <div class="level"><img src="source/level3.png" class="l_img" alt="c_img"></div>
+            <div id="difficultyChoosingScreen">
+                <div class="difficulty"><img src="source/level1.png" class="l_img" alt="c_img"></div>
+                <div class="difficulty"><img src="source/level2.jpg" class="l_img" alt="c_img"></div>
+                <div class="difficulty"><img src="source/level3.png" class="l_img" alt="c_img"></div>
             </div>
         </div>
     </body>
