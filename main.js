@@ -92,7 +92,7 @@ $(document).ready(function () {
         $("#select").fadeIn();
         bgm1.pause();
         bgm2.pause();
-        // $("#select").css('display','gird');
+        $("#select").css('display','flex');
     });
 
 
@@ -120,16 +120,4 @@ $(document).ready(function () {
         level = $(this).index();
         clickSound1.play();
     });
-
-    function play() {
-        var audio = $("#click_sound")[0];
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-            audio.currentTime = 0;
-        }
-    }
-    
-
 });

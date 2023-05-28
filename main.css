@@ -228,9 +228,7 @@ video {
   place-items: center;
   height: 95vh;
   text-align: center;
-  font-family: sans-serif;
-  padding-top: 200px;
-  
+  font-family: sans-serif; 
 }
 #mode_select .mode {
   width: 80vw;
@@ -248,7 +246,7 @@ video {
 }
 .m_img {
   height: 65vh;
-  width: 50vh;
+  width: 65vh;
 }
 #mode_select div:nth-child(1) {
   background-color: blue;
@@ -303,7 +301,7 @@ video {
 }
 .t_img {
   height: 65vh;
-  width: 25vh;
+  width: 30vh;
 }
 #team_select div:nth-child(1) {
   background-color: dodgerblue;
@@ -371,7 +369,7 @@ video {
 }
 .l_img {
   height: 65vh;
-  width: 35vh;
+  width: 45vh;
 }
 #level_select div:nth-child(1) {
   background-color: dodgerblue;
