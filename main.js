@@ -11,6 +11,7 @@ var green_value = 0;
 var blue_value = 0;
 var bgm1 = new Audio('source/startbgm1.mp3');
 var bgm2 = new Audio('source/startbgm2.mp3');
+var clickSound1 = new Audio('source/click1.mp3')
 
 //선택화면
 var mode;
@@ -89,7 +90,9 @@ $(document).ready(function () {
     $("#startbtn").click(function () {
         $("#start").hide();
         $("#select").fadeIn();
-        // $("#select").css('display','gird');
+        bgm1.pause();
+        bgm2.pause();
+        $("#select").css('display','flex');
     });
 
 
@@ -99,7 +102,7 @@ $(document).ready(function () {
         mode = $(this).index();
         $('#mode_select').hide();
         $('#team_select').fadeIn();
-        play();
+        clickSound1.play();
     });
 
     $('.team').click(function () {
@@ -111,22 +114,10 @@ $(document).ready(function () {
         else {
             //게임시작
         }
-        play();
+        clickSound1.play();
     });
     $('.level').click(function () {
         level = $(this).index();
-        play();
+        clickSound1.play();
     });
-
-    function play() {
-        var audio = $("#click_sound")[0];
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-            audio.currentTime = 0;
-        }
-    }
-    
-
 });
